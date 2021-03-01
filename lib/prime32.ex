@@ -2,8 +2,7 @@ defmodule Prime32 do
   @moduledoc """
   This very small library wraps a file containing all prime numbers that fit in 32 bits.
 
-  Prime numbers are made available in a stream by the `stream/0` function,
-  and by the `device/0` function, which gives read access to the file this library pulls from.
+  Prime numbers are made available in a stream by the `stream/0` function.
   """
 
   @doc """
