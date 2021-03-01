@@ -18,23 +18,13 @@ The docs can be found at [https://hexdocs.pm/prime32](https://hexdocs.pm/prime32
 
 ## Usage
 
-This is a very small library, and only provides two functions: `stream/0` and `device/0`.
+This is a very small library, and only provides one function: `stream/0`.
 
-The `stream/0` function returns an Elixir `Stream` containing all the primes in ascending order.
+The `stream/0` function returns an Elixir `Stream` containing all the 32-bit primes in ascending order.
 
 ```elixir
 Prime32.stream() |> Enum.take(5)
 [2, 3, 5, 7, 11]
-```
-
-The `device/0` function returns a IO device,
-so you can read at certain positions to optimize your own consumption of the data.
-Values in the file are little-endian and are not separated by anything,
-You can just read it four bytes at a time, if you want.
-
-```elixir
-Prime32.device() |> IO.binread(4)
-<<2, 0, 0, 0>>
 ```
 
 ## Maintainer
