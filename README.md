@@ -9,18 +9,19 @@ This package can be installed by adding `prime32` to your list of dependencies i
 ```elixir
 def deps do
   [
-    {:prime32, "~> 1.0.0"}
+    {:prime32, github: "cantido/prime32"}
   ]
 end
 ```
 
-The docs can be found at [https://hexdocs.pm/prime32](https://hexdocs.pm/prime32).
+You must add the library via GitHub.
+I am not allowed to upload this dependency to hex.pm because the prime number files make this library too big.
+This library is 67 MB, and the prime number files are compressed with gzip, so this is about as small as it can get.
 
 ## Usage
 
-This is a very small library, and only provides one function: `stream/0`.
-
-The `stream/0` function returns an Elixir `Stream` containing all the 32-bit primes in ascending order.
+This library provides one function: `stream/0`.
+It returns an Elixir `Stream` containing all the 32-bit primes in ascending order.
 
 ```elixir
 Prime32.stream() |> Enum.take(5)
